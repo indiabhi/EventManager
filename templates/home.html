@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends '_layouts/base.html' %}
 
 
 
@@ -10,9 +10,5 @@
 
 <p>Howdy{% if user.is_authenticated %} {{ user.username }}{% endif %}!</p>
 
-<h2><a href = '/accounts/register'>Register </a> </h2>
-<br />
-<h2><a href = '/accounts/signin'>SignIn </a> </h2>
-<br />
-<h2><a href = '/accounts/signout'>Signout </a> </h2>
+
 {% endblock %}
