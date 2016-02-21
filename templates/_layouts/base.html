@@ -37,6 +37,14 @@
 	</div><!--/.navbar-collapse -->
 	</div>
 	</div>
+	{%if messages %}
+	<ul class ="messages">
+		{% for message in messages %}
+		<li {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+			{{ message }}
+		{% endfor %}
+	</ul>
+	{% endif %}
 	<div class="jumbotron">
 	<div class="container">{% block headline %}{% endblock headline %}</div>
 	</div>
