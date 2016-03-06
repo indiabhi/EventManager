@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^accounts/register', SignUpView.as_view(success_url="/"), name = 'signup'),
     url(r'^accounts/signin', LoginView.as_view(),name = 'signin'),
     url(r'^accounts/signout', logout_view, name = 'signout'),
-
+    url(r'^talks/', include('talks.urls', namespace = 'talks')),
 ]

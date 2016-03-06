@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import RegisterationForm, LoginForm
 
+from talks.models import TalkList
+
 from braces import views
 
 
@@ -30,6 +32,11 @@ class SignUpView(
 	form_valid_message = "Thanks for Signing up GO ahead and Login"
 	model = User
 	template_name = 'accounts/signup.html'
+
+	def form_valid(self, form):
+		resp = super(SignUpView, self).form_valid(form)
+		TalkList.objects.create(user=self.object, name='To Attend')
+		return resp
 
 
 class LoginView(

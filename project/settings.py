@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_extensions',
     #'eventrater',
     'crispy_forms',
+    'talks',
 
 )
 
